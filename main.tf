@@ -1,4 +1,11 @@
 terraform {
+  backend "remote" {
+    organization = "az-terraform-course"
+    
+    workspaces {
+      name = "demo-aws-workspace"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
